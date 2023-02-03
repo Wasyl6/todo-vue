@@ -6,7 +6,7 @@
     <li class="task" v-bind:class="{finished: task.bool}" v-for="task in tasks" v-bind:key="task.id">
       <ol>
         {{ task.text }}
-        <button v-if="!task.bool" @click="removeTask(task.id)">Zrobione</button>
+        <input type="checkbox" v-if="!task.bool" @click="removeTask(task.id)">
       </ol>
     </li>
     </ul>
