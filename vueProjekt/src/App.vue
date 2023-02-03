@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <input type="text" placeholder="Do zrobienia" v-model="newTaskValue">
+    <input type="text" placeholder="Do zrobienia" v-model="newTask">
     <button @click="addTask">Dodaj</button>
     <ul>
-    <li v-for="task in tasks" v-bind:key="task.id">
+    <li class="task" v-for="task in tasks" v-bind:key="task.id">
       <ol>
         {{ task.text }}
       </ol>
@@ -12,11 +12,10 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue'
-const newTaskValue = ref('')
 export default {
   data() {
     return {
+      newTask: "",
       tasks: [
         {text: "Napisać program", bool: false, id: 1},
         {text: "Zrobić kawe", bool: false, id: 2}
@@ -26,12 +25,15 @@ export default {
   methods: {
     addTask() {
       this.tasks.push({
-        text: this.newTaskValue.value,
+        text: this.newTask,
         bool: false,
         id: Math.random()
       })
-      this.newTaskValue.value = ""
+      this.newTask = ""
     }
   }
 }
 </script>
+<style>
+
+</style>
