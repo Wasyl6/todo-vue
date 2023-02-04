@@ -4,7 +4,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
+  text-align: left;
   font-weight: normal;
 }
 
@@ -32,4 +32,17 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+.koniec{
+  color: gold;
+}
+.task {
+  color: #f75e5e;
+  border: 1px solid #550000;
+  margin: 5px;
+  padding: 5px;
+}
+.finished {
+  color: green;
+  text-decoration: line-through;
 }
