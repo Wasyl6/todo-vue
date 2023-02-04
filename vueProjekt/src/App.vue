@@ -45,4 +45,4 @@ export default {
   }
 }
 </script>
-//style css w base.css
+//style css w main.css
