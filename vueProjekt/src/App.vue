@@ -2,7 +2,7 @@
   <div id="app">
     <div>
     <h1 class="koniec" v-if="allTasksFinished">Wszystko skończone!</h1>
-    <h2>Lista todo:</h2>
+    <h2>Lista TODO:</h2>
     <input type="text" placeholder="Do zrobienia" v-model="new_task">
     <button @click="addTask">Dodaj</button>
     </div><br>
@@ -45,23 +45,4 @@ export default {
   }
 }
 </script>
-<style>
-#app {
-  width: 100%;
-  height: 100%;
-  text-align: left;
-}
-.koniec{
-  color: gold;
-}
-.task {
-  color: #f75e5e;
-  border: 1px solid #550000;
-  margin: 5px;
-  padding: 5px;
-}
-.finished {
-  color: green;
-  text-decoration: line-through;
-}
-</style>
+//style css w base.css
