@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     allTasksFinished() {
-    return this.tasks.every(task => task.finished==true)
+      return this.tasks.length > 0 && this.tasks.every(task => task.finished==true)
   }
   }
 }
@@ -49,9 +49,6 @@ export default {
   width: 100%;
   height: 100%;
   text-align: left;
-}
-.h1 {
-  white-space: pre-;
 }
 .task {
   color: #f75e5e;
