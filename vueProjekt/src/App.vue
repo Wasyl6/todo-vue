@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <h1 v-if="allTasksFinished">Wszystko skończone!</h1>
     <div>
+    <h1 v-if="allTasksFinished">Wszystko skończone!</h1>
     <input type="text" placeholder="Do zrobienia" v-model="new_task">
     <button @click="addTask">Dodaj</button>
     </div><br>
@@ -20,10 +20,7 @@ export default {
   data() {
     return {
       new_task: "",
-      tasks: [
-        {text: "Napisać program", finished: false, id: 1},
-        {text: "Zrobić kawe", finished: true, id: 2}
-      ]
+      tasks: []
     }
   },
   methods: {
@@ -50,7 +47,11 @@ export default {
 <style>
 #app {
   width: 100%;
-  align-content: center;
+  height: 100%;
+  text-align: left;
+}
+.h1 {
+  white-space: pre-;
 }
 .task {
   color: #f75e5e;
