@@ -10,8 +10,8 @@
       <li class="task" v-bind:class="{ finished: task.finished }" v-for="task in tasks" v-bind:key="task.id">
         <span v-if="editingTaskId !== task.id || task.finished">{{ task.text }}</span>
         <input type="text" v-model="task.text" v-if="editingTaskId === task.id && !task.finished"/>
+        <button v-if="!task.finished" @click="editingTaskId === task.id ? stopEditingTask() : editTask(task.id)">{{ editingTaskId === task.id ? 'Zatwierdz' : 'Edytuj' }}</button>
         <input type="checkbox" v-if="!task.finished" @click="completeTask(task.id)">
-        <button v-if="!task.finished" @click="editTask(task.id)">Edytuj</button>
       </li>
     </ul>
   </div>
@@ -41,6 +41,9 @@ export default {
     },
     editTask(id) {
       this.editingTaskId = id
+    },
+    stopEditingTask() {
+      this.editingTaskId = null
     },
   },
   computed: {
